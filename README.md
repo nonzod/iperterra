@@ -31,6 +31,11 @@ File: `~/.local/share/applications/com.slack.Slack.desktop`
 Exec=/usr/bin/flatpak run --password-store=gnome-libsecret --branch=stable ...
 ```
 
+## Applicazioni Predefinite
+- **Terminal**: `kitty`
+- **File Manager**: `nautilus` (GNOME Files)
+- **Menu**: `wofi`
+
 ## Waybar (System Tray)
 
 ### Autostart (autostart.conf)
@@ -39,9 +44,11 @@ exec-once = waybar
 ```
 
 ### Configurazione
+File: `~/.config/waybar/config.jsonc`
 - Moduli Hyprland: `hyprland/workspaces`, `hyprland/window`, `hyprland/language`
 - Rimossi: `mpd`, `power-profiles-daemon` (non installati)
 - Tray abilitato per applicazioni come Bitwarden
+- **Audio**: Click su `pulseaudio` apre `pavucontrol`
 
 ## GVFS Automount (Dischi Removibili)
 
