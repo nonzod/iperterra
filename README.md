@@ -36,19 +36,36 @@ Exec=/usr/bin/flatpak run --password-store=gnome-libsecret --branch=stable ...
 - **File Manager**: `nautilus` (GNOME Files)
 - **Menu**: `wofi`
 
-## Waybar (System Tray)
+## eww (Status Bar)
 
 ### Autostart (autostart.conf)
 ```bash
-exec-once = waybar
+exec-once = eww open bar && eww open bar1
 ```
 
 ### Configurazione
-File: `~/.config/waybar/config.jsonc`
-- Moduli Hyprland: `hyprland/workspaces`, `hyprland/window`, `hyprland/language`
-- Rimossi: `mpd`, `power-profiles-daemon` (non installati)
-- Tray abilitato per applicazioni come Bitwarden
-- **Audio**: Click su `pulseaudio` apre `pavucontrol`
+File: `~/.config/eww/`
+- `eww.yuck` - Definizione widget e finestre
+- `eww.scss` - Stili CSS
+
+### Funzionalità
+- **Workspaces per monitor**:
+  - Monitor 0 (DP-1 - MSI): workspace 1-5
+  - Monitor 1 (DP-3 - NEC): workspace 6-10
+  - Click su workspace per switchare
+  - Evidenziazione workspace attivo (blu) e occupato (bianco)
+- **System Tray**: icone applicazioni (Bitwarden, ecc.)
+- **Audio**:
+  - Icona volume dinamica con stato mute
+  - Click su icona: mute/unmute
+  - Click su percentuale: apre `pwvucontrol`
+  - Scroll su icona: +/- 5% volume
+- **Orologio**: formato HH:MM
+
+### Reload
+```bash
+eww reload
+```
 
 ## GVFS Automount (Dischi Removibili)
 
@@ -64,5 +81,6 @@ Abilita automount per chiavette USB e dischi esterni tramite i daemon GVFS di GN
 - `gnome-keyring`
 - `libsecret`
 - `libgnome-keyring`
-- `waybar`
+- `eww`
+- `pwvucontrol` (controllo audio)
 - `gvfs` (e moduli opzionali: `gvfs-mtp`, `gvfs-gphoto2`)
