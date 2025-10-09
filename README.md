@@ -60,7 +60,7 @@ File: `~/.config/eww/`
   - Click su icona: mute/unmute
   - Click su percentuale: apre `pwvucontrol`
   - Scroll su icona: +/- 5% volume
-- **Orologio**: formato HH:MM
+- **Data e Ora**: giorno settimana, giorno mese, mese abbreviato (es. "Gio 09 Ott") e orario HH:MM
 
 ### Reload
 ```bash
@@ -77,10 +77,22 @@ exec-once = /usr/lib/gvfs/gvfs-udisks2-volume-monitor &
 
 Abilita automount per chiavette USB e dischi esterni tramite i daemon GVFS di GNOME. Funziona con file manager che supportano gvfs (Nautilus, Dolphin, Thunar, ecc.).
 
+## Notifiche
+
+### Autostart (autostart.conf)
+```bash
+exec-once = mako
+```
+
+Daemon di notifiche per Wayland. Gestisce le notifiche desktop per applicazioni e sistema.
+
 ## Pacchetti Richiesti
 - `gnome-keyring`
 - `libsecret`
 - `libgnome-keyring`
 - `eww`
 - `pwvucontrol` (controllo audio)
+- `wpctl` (controllo volume, parte di `wireplumber`)
 - `gvfs` (e moduli opzionali: `gvfs-mtp`, `gvfs-gphoto2`)
+- `mako` (notifiche Wayland)
+- `jq` (parsing JSON per eww workspaces)
