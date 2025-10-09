@@ -1,0 +1,31 @@
+# Mako notification daemon configuration
+
+# Default timeout in milliseconds (25 seconds)
+default-timeout=25000
+
+# Font
+font=JetBrainsMono Nerd Font 11
+
+# Colors (Catppuccin Mocha theme)
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=over #313244
+
+# Border
+border-size=2
+border-radius=8
+
+# Padding
+padding=15
+
+# Position
+anchor=top-right
+margin=10
+
+# Maximum visible notifications
+max-visible=3
+
+# Notification size
+width=350
+height=150
