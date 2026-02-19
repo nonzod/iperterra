@@ -144,3 +144,9 @@ File: `~/.config/hypr/hyprlock.conf`
 - `hyprpaper` (gestione wallpaper)
 - `hyprlock` (blocco schermo Hyprland)
 - `hyprpolkitagent` (agente PolicyKit per autenticazione privilegi)
+
+## Note
+- Window rules usano la nuova sintassi Hyprland v0.53+:
+  - Props: `match:class`, `match:title`, `match:xwayland`, `match:float`, `match:fullscreen`, `match:pin`
+  - Effects con underscore: `suppress_event`, `no_focus`, `no_blur`, etc.
+  - Esempio: `windowrule = no_focus on, match:class ^$, match:xwayland true`
